@@ -13,7 +13,7 @@
 	<%
 	
 	String usuario=request.getParameter("usuario");
-	String contrasena=request.getParameter("contrasena");
+	String contrasena=request.getParameter("contra");
 	
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	
