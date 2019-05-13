@@ -37,20 +37,19 @@
 <title>Insert title here</title>
 
 <style>
-.cabezera{
-	font-weight:bold;
+.cabezera {
+	font-weight: bold;
 }
-
 </style>
 </head>
 <body>
 	<table border="1">
 
 		<tr class="cabezera">
-			<td >Nombre</td>
-			<td >Apellido</td>
-			<td >Puesto</td>
-			<td >Salario</td>
+			<td>Nombre</td>
+			<td>Apellido</td>
+			<td>Puesto</td>
+			<td>Salario</td>
 		</tr>
 
 
@@ -59,7 +58,20 @@
 				<td>${EmpTemp.nombre }</td>
 				<td>${ EmpTemp.apellido}</td>
 				<td>${ EmpTemp.puesto}</td>
-				<td>${ EmpTemp.salario}</td>
+				<td><c:choose>
+						<c:when test="${ EmpTemp.salario<18}">
+					${ EmpTemp.salario+5000}
+					</c:when>
+
+						<c:when test="${ EmpTemp.salario>18 && EmpTemp.salario<=30}">
+					${ EmpTemp.salario+2000}
+					</c:when>
+						<c:otherwise>
+					${ EmpTemp.salario}
+					</c:otherwise>
+
+					</c:choose></td>
+
 				<br>
 		</tr>
 
